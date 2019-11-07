@@ -3,9 +3,13 @@
   "sideEffects": false,
   "version": "1.0.0-alpha.1",
   "main": "dist/coreui-icons-vue.common.js",
+  "types": "index.d.ts",
   "scripts": {
     "build": "vue-cli-service build --target lib --name coreui-icons-vue ./index.js",
     "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
