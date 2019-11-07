@@ -10,8 +10,6 @@
 <script>
 export default {
   name: 'CIcon',
-  //This object contains icons added before component registration
-  icons: {},
   props: {
     name: String,
     content: [String, Array],
@@ -27,7 +25,12 @@ export default {
       return iconNameIsKebabCase ? this.toCamelCase(this.name) : this.name
     },
     code () {
-      return this.content || this.$options.icons[this.iconName]
+      if (this.content) {
+        return this.content
+      } else if (this.$root.$options.icons) {
+        return this.$root.$options.icons[this.iconName]
+      }
+      return undefined
     },
     icon () {
       if (Array.isArray(this.code)) {
