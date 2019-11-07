@@ -1,10 +1,15 @@
 <template>
   <svg
+    v-if="!src"
     xmlns="http://www.w3.org/2000/svg"
     :viewBox="viewBox"
     :class="computedClasses"
     v-html="icon.svgContent"
   ></svg>
+  <img
+    v-else
+    :src="src"
+  />
 </template>
 
 <script>
@@ -17,7 +22,8 @@ export default {
       type: String,
       validator: size => ['sm', 'lg', 'xl', 'custom-size'].includes(size)
     },
-    customClasses: [String, Array, Object]
+    customClasses: [String, Array, Object],
+    src: String
   },
   computed: {
     iconName () {

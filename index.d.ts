@@ -5,4 +5,5 @@ export declare class CIcon extends Vue {
   content: [string, Array<string>]
   size: string
   customClasses: [string, Array<any>, object]
+  src: string
 }
