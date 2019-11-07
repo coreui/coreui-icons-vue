@@ -15,8 +15,6 @@ export default {
   props: {
     name: String,
     content: [String, Array],
-    // fill: String,
-    // background: String,
     size: {
       type: String,
       validator: size => ['sm', 'lg', 'xl', 'custom-size'].includes(size)
@@ -42,12 +40,6 @@ export default {
     viewBox () {
       return this.$attrs.viewBox || `0 0 ${ this.icon.coordinates }`
     },
-    // style () {
-    //   return {
-    //     fill: this.fill || 'currentColor',
-    //     background: this.background
-    //   }
-    // },
     computedSize () {
       return this.$attrs.width || this.$attrs.height ? 'custom-size' : this.size
     },
