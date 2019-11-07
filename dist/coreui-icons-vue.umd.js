@@ -162,7 +162,7 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"03b136c7-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./CIcon.vue?vue&type=template&id=4d8968ee&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"03b136c7-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./CIcon.vue?vue&type=template&id=75625a27&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{class:_vm.computedClasses,attrs:{"xmlns":"http://www.w3.org/2000/svg","viewBox":_vm.viewBox},domProps:{"innerHTML":_vm._s(_vm.icon.svgContent)}})}
 var staticRenderFns = []
 
@@ -181,8 +181,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 /* harmony default export */ var lib_vue_loader_options_CIconvue_type_script_lang_js_ = ({
   name: 'CIcon',
-  //This object contains icons added before component registration
-  icons: {},
   props: {
     name: String,
     content: [String, Array],
@@ -200,7 +198,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return iconNameIsKebabCase ? this.toCamelCase(this.name) : this.name;
     },
     code: function code() {
-      return this.content || this.$options.icons[this.iconName];
+      if (this.content) {
+        return this.content;
+      } else if (this.$root.$options.icons) {
+        return this.$root.$options.icons[this.iconName];
+      }
+
+      return undefined;
     },
     icon: function icon() {
       if (Array.isArray(this.code)) {
@@ -355,16 +359,8 @@ var component = normalizeComponent(
 // CONCATENATED MODULE: ./index.js
 
 
-var CIconPlugin = {
-  install: function install(Vue, customIconSet) {
-    CIcon.icons = customIconSet;
-    Vue.component('CIcon', CIcon);
-  }
-};
-
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib-no-default.js
 /* concated harmony reexport CIcon */__webpack_require__.d(__webpack_exports__, "CIcon", function() { return CIcon; });
-/* concated harmony reexport CIconPlugin */__webpack_require__.d(__webpack_exports__, "CIconPlugin", function() { return CIconPlugin; });
 
 
 

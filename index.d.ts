@@ -6,9 +6,3 @@ export declare class CIcon extends Vue {
   size: string
   customClasses: [string, Array<any>, object]
 }
-
-import { PluginFunction } from 'vue'
-export interface CIconPluginPlugin {
-  install: PluginFunction<Function>
-}
-export declare const CIconPlugin: CIconPluginPlugin
