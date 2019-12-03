@@ -1,7 +1,7 @@
 {
   "name": "coreui-icons-vue",
-  "sideEffects": false,
   "version": "1.0.0-alpha.1",
+  "sideEffects": "CIcon.vue",
   "main": "dist/coreui-icons-vue.common.js",
   "types": "index.d.ts",
   "scripts": {
