@@ -1,36 +1,21 @@
-# CoreUI Icons - Simply beautiful open source icons
+## CoreUI icons vue - CIcon component
 
-An open source icon set with marks in SVG, webfont and raster formats. Ready-to-use fonts and stylesheets that work with your favorite frameworks..
+Dedicated component used to implement [CoreUI Icons svg set](https://coreui.io/icons/) in Vue.js.
 
+## Features
+- Can load icons stored globally, directly passed or by source link,
+- Can significantly reduce bundle size due to JavaScript named icons import,
+- Full functionality of 'svg' html tag,
+- Clean API
 
-## Preview & Docs
-
-[https://coreui.io/icons/](https://coreui.io/icons/)
-
+For component description visit [CIcon component documentation](https://coreui.io/vue/docs/components/icon)
 
 ## Installation
 
-### CDN
-
-```html
-<link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/coreui-icons.min.css">
-```
-
-### NPM
+If you already have installed [CoreUI Vue component library](https://coreui.io/vue/docs) plugin, then you have CIcon component already installed, otherwise install package by:
 
 ```shell
-npm install @coreui/icons --save
-
-```
-
-Or, you can also clone or [download this repository](https://github.com/coreui/coreui-icons/archive/master.zip) as zip.
-
-
-## Basic Use
-You can place CoreUI Icons just about anywhere using a CSS style prefix and the icon’s name. CoreUI Icons are designed to be used with inline elements ex. `<i>` or `<span>`.
-
-```html
-<i class="cui-energy"></i>
+npm install @coreui/icons-vue --save
 ```
 
 ## License
