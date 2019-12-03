@@ -1,23 +1,27 @@
 {
   "name": "coreui-icons-vue",
-  "version": "1.0.0-alpha.1",
-  "sideEffects": "CIcon.vue",
+  "version": "1.0.0",
+  "sideEffects": "src/CIcon.vue",
   "main": "dist/coreui-icons-vue.common.js",
-  "types": "index.d.ts",
+  "types": "src/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
-    "build": "vue-cli-service build --target lib --name coreui-icons-vue ./index.js",
+    "build": "vue-cli-service build --target lib --name coreui-icons-vue ./src/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.0.5",
-    "@vue/cli-plugin-eslint": "^4.0.5",
-    "@vue/cli-service": "^4.0.5",
+    "@vue/cli-plugin-babel": "^4.1.1",
+    "@vue/cli-plugin-eslint": "^4.1.1",
+    "@vue/cli-service": "^4.1.1",
     "babel-eslint": "^10.0.3",
     "babel-preset-vue-app": "^2.0.0",
-    "eslint": "^6.6.0",
+    "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.0.1",
     "vue-template-compiler": "^2.6.10"
   },

@@ -70,7 +70,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .c-icon {
   display: inline-block;
   color: inherit;
