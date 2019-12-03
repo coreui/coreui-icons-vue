@@ -1,12 +1,10 @@
-[![@coreui icons](https://img.shields.io/badge/@coreui%20-icons-lightgrey.svg?style=flat-square)](https://github.com/coreui/icons)
+[![@coreui icons](https://img.shields.io/badge/@coreui%20-icons--vue-lightgrey.svg?style=flat-square)](https://github.com/coreui/icons)
 [![NPM downloads][npm-coreui-icons-download]][npm-coreui-icons]  
-[![npm-coreui-icons-next][npm-coreui-icons-next]][npm-coreui-icons]  
 [![npm package][npm-coreui-icons-badge]][npm-coreui-icons]
 
-[npm-coreui-icons]: https://www.npmjs.com/package/@coreui/icons  
-[npm-coreui-icons-badge]: https://img.shields.io/npm/v/@coreui/icons.png?style=flat-square  
+[npm-coreui-icons]: https://www.npmjs.com/package/@coreui/icons-vue  
+[npm-coreui-icons-badge]: https://img.shields.io/npm/v/@coreui/icons-vue.png?style=flat-square  
 [npm-coreui-icons-download]: https://img.shields.io/npm/dm/@coreui/icons.svg?style=flat-square  
-[npm-coreui-icons-next]: https://img.shields.io/npm/v/@coreui/icons/next.png?style=flat-square
 
 ## CoreUI icons vue - CIcon component
 
