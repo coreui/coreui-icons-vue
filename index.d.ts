@@ -7,3 +7,5 @@ export declare class CIcon extends Vue {
   customClasses: [string, Array<any>, object]
   src: string
 }
+
+export declare class CIconRaw extends CIcon {}
