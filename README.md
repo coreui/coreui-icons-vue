@@ -1,6 +1,6 @@
 # CoreUI Icons Vue
 
-![NPM](https://img.shields.io/badge/npm-1.0.2-brightgreen)
+![NPM](https://img.shields.io/npm/v/@coreui/icons-vue/latest?style=flat&color=brightgreen)
 ![Downloads](https://img.shields.io/npm/dm/@coreui/icons.svg?style=flat-square)
 ![Vue](https://img.shields.io/badge/Vue-^2.6.10-brightgreen.svg)
 
