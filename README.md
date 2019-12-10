@@ -1,16 +1,15 @@
-[![@coreui icons](https://img.shields.io/badge/@coreui%20-icons--vue-lightgrey.svg?style=flat-square)](https://github.com/coreui/icons)
-[![NPM downloads][npm-coreui-icons-download]][npm-coreui-icons]  
-[![npm package][npm-coreui-icons-badge]][npm-coreui-icons]
+# CoreUI Icons Vue
 
-[npm-coreui-icons]: https://www.npmjs.com/package/@coreui/icons-vue  
-[npm-coreui-icons-badge]: https://img.shields.io/npm/v/@coreui/icons-vue.png?style=flat-square  
-[npm-coreui-icons-download]: https://img.shields.io/npm/dm/@coreui/icons.svg?style=flat-square  
+![NPM](https://img.shields.io/badge/npm-1.0.2-brightgreen)
+![Downloads](https://img.shields.io/npm/dm/@coreui/icons.svg?style=flat-square)
+![Vue](https://img.shields.io/badge/Vue-^2.6.10-brightgreen.svg)
 
-## CoreUI icons vue - CIcon component
+## CIcon component
 
-Dedicated component used to implement [CoreUI Icons svg set](https://coreui.io/icons/) in Vue.js.
+Dedicated component used to implement [CoreUI Icons SVG set](https://coreui.io/icons/) in Vue.js.
 
-## Features
+### Features
+
 - Can load icons stored globally, directly passed or by source link,
 - Can significantly reduce bundle size due to JavaScript named icons import,
 - Full functionality of 'svg' html tag,
@@ -18,7 +17,7 @@ Dedicated component used to implement [CoreUI Icons svg set](https://coreui.io/i
 
 For component description visit [CIcon component documentation](https://coreui.io/vue/docs/components/icon)
 
-## Installation
+### Installation
 
 If you already have installed [CoreUI Vue component library](https://coreui.io/vue/docs) plugin, then you have CIcon component already installed, otherwise install package by:
 
@@ -26,7 +25,7 @@ If you already have installed [CoreUI Vue component library](https://coreui.io/v
 npm install @coreui/icons-vue --save
 ```
 
-## License
+### License
 
 CoreUI Icons Free is free, open source, and GPL friendly. You can use it for
 commercial projects, open source projects, or really almost whatever you want.
