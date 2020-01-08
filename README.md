@@ -1,8 +1,8 @@
 # CoreUI Icons Vue
 
 ![NPM](https://img.shields.io/npm/v/@coreui/icons-vue/latest?style=flat&color=brightgreen)
-![Downloads](https://img.shields.io/npm/dm/@coreui/icons.svg?style=flat-square)
-![Vue](https://img.shields.io/badge/Vue-^2.6.10-brightgreen.svg)
+![Downloads](https://img.shields.io/npm/dm/@coreui/icons-vue.svg?style=flat-square)
+![Vue](https://img.shields.io/npm/v/vue/latest?style=flat&color=brightgreen)
 
 ## CIcon component
 
@@ -10,8 +10,11 @@ Dedicated component used to implement [CoreUI Icons SVG set](https://coreui.io/i
 
 ### Features
 
-- Can load icons stored globally, directly passed or by source link,
-- Can significantly reduce bundle size due to JavaScript named icons import,
+- Can load icons in three ways:
+  - stored globally in Vue root object,
+  - directly passed SVG tag content,
+  - source link to SVG file
+- Greatly reduce icons bundle size, when imported as single icons,
 - Full functionality of 'svg' html tag,
 - Clean API
 
