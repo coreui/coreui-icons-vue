@@ -1,8 +1,10 @@
 # CoreUI Icons Vue
 
-![NPM](https://img.shields.io/npm/v/@coreui/icons-vue/latest?style=flat&color=brightgreen)
-![Downloads](https://img.shields.io/npm/dm/@coreui/icons-vue.svg?style=flat-square)
-![Vue](https://img.shields.io/npm/v/vue/latest?style=flat&color=brightgreen)
+[![NPM](https://img.shields.io/npm/v/@coreui/icons-vue/latest?style=flat-square&color=brightgreen)][coreui]
+[![Downloads](https://img.shields.io/npm/dm/@coreui/icons-vue.svg?style=flat-square)][coreui]
+[![License](https://img.shields.io/npm/l/@coreui/vue?style=flat-square)][coreui]
+
+[coreui]: https://coreui.io/icons
 
 ## CIcon component
 
