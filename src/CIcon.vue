@@ -5,10 +5,12 @@
     :viewBox="viewBox"
     :class="computedClasses"
     v-html="titleCode + iconCode"
+    role="img"
   ></svg>
   <img
     v-else
     :src="src"
+    role="img"
   />
 </template>
 
@@ -34,16 +36,8 @@ export default {
       const iconNameIsKebabCase = this.name && this.name.includes('-')
       return iconNameIsKebabCase ? this.toCamelCase(this.name) : this.name
     },
-    titleString () {
-      if (this.title) {
-        return this.title
-      } else if (this.iconName) {
-        return this.generateTitle(this.iconName)
-      }
-      return 'icon'
-    },
     titleCode () {
-      return `<title>${this.titleString}</title>`
+      return this.title ? `<title>${this.title}</title>` : ''
     },
     code () {
       if (this.content) {
@@ -74,16 +68,6 @@ export default {
       return str.replace(/([-_][a-z0-9])/ig, ($1) => {
         return $1.toUpperCase().replace('-', '')
       })
-    },
-    generateTitle (title) {
-      return this.getValidTitle(title).replace(/([a-z0-9])([A-Z])/g, '$1 $2')
-    },
-    getValidTitle (title) {
-      if (['cil', 'cib', 'cif', 'cis'].includes(title.substring(0,3))) {
-        return title.slice(3)
-      } else {
-        return title.charAt(0).toUpperCase() + title.slice(1)
-      }
     }
   }
 }
