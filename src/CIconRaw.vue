@@ -1,6 +1,6 @@
 <template>
   <svg
-    v-if="!src"
+    v-if="!src && !use"
     xmlns="http://www.w3.org/2000/svg"
     :viewBox="viewBox"
     :class="computedClasses"
@@ -8,10 +8,18 @@
     role="img"
   ></svg>
   <img
-    v-else
+    v-else-if="src"
     :src="src"
     role="img"
   />
+  <svg
+    v-else-if="use"
+    xmlns="http://www.w3.org/2000/svg"
+    :class="computedClasses"
+    role="img"
+  >
+    <use :href="use"></use>
+  </svg>
 </template>
 
 <script>
@@ -29,7 +37,8 @@ export default {
     },
     customClasses: [String, Array, Object],
     src: String,
-    title: String
+    title: String,
+    use: String
   },
   computed: {
     iconName () {
