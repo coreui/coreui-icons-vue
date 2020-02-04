@@ -23,7 +23,7 @@ export default {
     size: {
       type: String,
       validator: size => [
-        'custom-size', 'sm', 'lg', 'xl',
+        'custom', 'custom-size', 'sm', 'lg', 'xl',
         '2xl', '3xl', '4xl', '5xl', '6xl', '7xl', '8xl', '9xl'
       ].includes(size)
     },
@@ -56,11 +56,12 @@ export default {
       return this.$attrs.viewBox || `0 0 ${this.scale}`
     },
     computedSize () {
-      return this.$attrs.width || this.$attrs.height ? 'custom-size' : this.size
+      const addCustom = !this.size && (this.$attrs.width || this.$attrs.height)
+      return this.size === 'custom' || addCustom ? 'custom-size' : this.size
     },
     computedClasses () {
-      return this.customClasses ||  
-             ['c-icon', { [`c-icon-${this.computedSize}`]: this.computedSize }]
+      const size = this.computedSize
+      return this.customClasses || ['c-icon', { [`c-icon-${size}`]: size }]
     }
   },
   methods: {
