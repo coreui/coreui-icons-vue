@@ -52,7 +52,11 @@ export default {
       if (this.content) {
         return this.content
       } else if (this.$root.$options.icons) {
-        return this.$root.$options.icons[this.iconName]
+        const icon = this.$root.$options.icons[this.iconName]
+        if (!icon && process && process.env && process.env.NODE_ENV === 'development') {
+          console.error('CIcon: "' + this.iconName + '" is not registered in $root.icons object. For CIcon docs visit https://coreui.io/vue/docs/components/icon.html')
+        }
+        return icon
       }
     },
     iconCode () {
