@@ -1,6 +1,6 @@
 {
   "name": "@coreui/icons-vue",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "license": "MIT",
   "sideEffects": "src/CIcon.vue",
   "main": "dist/coreui-icons-vue.common.js",
