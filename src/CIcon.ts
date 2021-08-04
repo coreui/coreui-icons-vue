@@ -57,7 +57,6 @@ const CIcon = defineComponent({
     },
   },
   setup(props, { attrs }) {
-
     const icons: any = inject('icons')
     console.log(icons)
 
@@ -98,25 +97,30 @@ const CIcon = defineComponent({
 
     const viewBox = attrs.viewBox || `0 0 ${scale}`
 
-    // const size = () => {
-    //   const addCustom = !props.size && (attrs.width || attrs.height)
-    //   return props.size === 'custom' || addCustom ? 'custom-size' : props.size
-    // }
-    const classNames = props.customClasses || ['icon', { [`icon-${props.size}`]: props.size }]
+    const size = () => {
+      const addCustom = !props.size && (attrs.width || attrs.height)
+      return props.size === 'custom' || addCustom ? 'custom-size' : props.size
+    }
+
+    const classNames = (() => {
+      return props.customClasses || ['icon', { [`icon-${size()}`]: size() }]
+    })()
 
     return () => [
       !props.src &&
         !props.use &&
         h('svg', {
+          ...attrs,
           xmlns: 'http://www.w3.org/2000/svg',
           class: classNames,
           viewBox: viewBox,
-          innerHTML: `${titleCode} + ${iconCode}`,
+          innerHTML: `${titleCode}${iconCode}`,
           role: 'img',
         }),
       props.src &&
         !props.use &&
         h('img', {
+          ...attrs,
           class: classNames,
           src: props.src,
           role: 'img',
@@ -126,6 +130,7 @@ const CIcon = defineComponent({
         h(
           'svg',
           {
+            ...attrs,
             xmlns: 'http://www.w3.org/2000/svg',
             class: classNames,
             role: 'img',

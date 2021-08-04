@@ -1,8 +1,7 @@
 {
   "name": "@coreui/icons-vue",
-  "version": "2.0.0-alpha.0",
+  "version": "2.0.0-alpha.1",
   "license": "MIT",
-  "sideEffects": "src/CIcon.vue",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -44,6 +43,9 @@
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint 'src/**/*.{js,ts,tsx}'"
+  },
+  "dependencies": {
+    "vue": "^3.0.10"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.28.5",
