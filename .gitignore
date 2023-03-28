@@ -1,5 +1,11 @@
 .DS_Store
 .git
-.idea
+.vscode
+_old
 node_modules
-dist
+test
+.cache
+coverage/
+dist/
+public/
+yarn.lock

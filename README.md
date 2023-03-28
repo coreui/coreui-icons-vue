@@ -1,4 +1,25 @@
-# CoreUI Icons Vue
+<p align="center">
+  <a href="https://coreui.io/">
+    <img src="https://coreui.io/images/brand/coreui-icons.svg" alt="CoreUI Icons logo" height="50">
+  </a>
+</p>
+
+<p align="center">
+  Official Vue.js component for CoreUI Icons and CoreUI Icons PRO.
+  <br>
+  <a href="https://coreui.io/vue/docs/components/icon.html"><strong>Explore CoreUI Icons for Vue docs »</strong></a>
+  <br>
+  <br>
+  <a href="https://github.com/coreui/coreui-icons/issues/new?template=bug_report.md">Report bug</a>
+  ·
+  <a href="https://github.com/coreui/coreui-icons/issues/new?template=feature_request.md">Request feature</a>
+  ·
+  <a href="https://blog.coreui.io/">Blog</a>
+</p>
+
+
+
+## Status
 
 [![NPM](https://img.shields.io/npm/v/@coreui/icons-vue/latest?style=flat-square&color=brightgreen)][coreui]
 [![Downloads](https://img.shields.io/npm/dm/@coreui/icons-vue.svg?style=flat-square)][coreui]
@@ -6,38 +27,53 @@
 
 [coreui]: https://coreui.io/icons
 
-## CIcon component
 
-Dedicated component used to implement [CoreUI Icons SVG set](https://coreui.io/icons/) in Vue.js.
+## Installation
 
-### Features
-
-- Can load icons in three ways:
-  - stored globally in Vue root object,
-  - directly passed SVG tag content,
-  - source link to SVG file
-- Greatly reduce icons bundle size, when imported as single icons,
-- Full functionality of 'svg' html tag,
-- Clean API
-
-For component description visit [CIcon component documentation](https://coreui.io/vue/docs/components/icon)
-
-### Installation
-
-If you already have installed [CoreUI Vue component library](https://coreui.io/vue/docs) plugin, then you have CIcon component already installed, otherwise install package by:
-
-```shell
-npm install @coreui/icons-vue --save
+```bash
+npm install @coreui/icons
+npm install @coreui/icons-vue
 ```
 
-### License
+or
 
-CoreUI Icons Free is free, open source, and GPL friendly. You can use it for
-commercial projects, open source projects, or really almost whatever you want.
+```bash
+yarn add @coreui/icons
+yarn add @coreui/icons-vue
+```
 
-- Icons — CC BY 4.0 License
-  - In the CoreUI Icons Free download, the CC BY 4.0 license applies to all icons packaged as .svg and .js files types.
-- Fonts — SIL OFL 1.1 License
-  - In the CoreUI Icons Free download, the SIL OLF license applies to all icons packaged as web and desktop font files.
-- Code — MIT License
-  - In the CoreUI Icons Free download, the MIT license applies to all non-font and non-icon files.
+## Use
+
+### Single icon
+
+```jsx
+import { CIcon } from '@coreui/icons-vue';
+import { cifAu } from '@coreui/icons';
+
+...
+<CIcon :icon="cilAu" size="xxl"/>
+...
+```
+
+### All icons
+
+```jsx
+import { CIcon } from '@coreui/icons-vue';
+import * as icon from '@coreui/icons';
+
+...
+<CIcon :icon="icon.cilList" size="xxl"/>
+...
+```
+
+## API
+
+| property | type | description |
+| --- | --- | --- |
+| customClassName | `string` \| `object` \| `string[]` | Use for replacing default CIcon component classes. Prop is overriding the 'size' prop. |
+| icon | `string` \| `string[]` | Name of the icon placed in React object or SVG content. |
+| height | `number` | The height attribute defines the vertical length of an icon. |
+| size | `sm` \| `md` \|`lg` \| `xl` \| `xxl` \| `3xl` \| `4xl` \| `5xl` \| `6xl` \| `7xl` \| `8xl` \| `9xl` | Size of the icon. |
+| use | `string` | If defined component will be rendered using `use` tag. |
+| title | `string` | Title tag content. |
+| width | `number` | The width attribute defines the horizontal length of an icon. |
