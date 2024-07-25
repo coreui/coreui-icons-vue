@@ -1,3 +1,4 @@
 import { CIcon } from './CIcon'
-export { CIcon }
+import { CIconSvg } from './CIconSvg'
+export { CIcon, CIconSvg }
 export default CIcon
