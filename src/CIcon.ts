@@ -1,4 +1,4 @@
-import { computed, defineComponent, h, inject, PropType } from 'vue'
+import { computed, defineComponent, h, inject, PropType, ref, watch } from 'vue'
 
 const CIcon = defineComponent({
   name: 'CIcon',
@@ -83,7 +83,14 @@ const CIcon = defineComponent({
   },
   setup(props, { attrs }) {
     const icons: any = inject('icons')
-    const _icon = props.icon || props.content || props.name
+    const _icon = ref(props.icon || props.content || props.name)
+
+    watch(
+      () => props.icon,
+      () => {
+        _icon.value = props.icon
+      },
+    )
 
     const toCamelCase = (str: string) => {
       return str
@@ -94,20 +101,26 @@ const CIcon = defineComponent({
     }
 
     const iconName = computed(() =>
-      _icon && typeof _icon === 'string' ? (_icon.includes('-') ? toCamelCase(_icon) : _icon) : '',
+      _icon.value && typeof _icon.value === 'string'
+        ? _icon.value.includes('-')
+          ? toCamelCase(_icon.value)
+          : _icon.value
+        : '',
     )
 
     const titleCode = props.title ? `<title>${props.title}</title>` : 'undefined'
 
     const code = computed(() =>
-      Array.isArray(_icon)
-        ? _icon
-        : typeof _icon === 'string' && iconName.value && icons[iconName.value]
-        ? icons[iconName.value]
-        : 'undefined',
+      Array.isArray(_icon.value)
+        ? _icon.value
+        : typeof _icon.value === 'string' && iconName.value && icons[iconName.value]
+          ? icons[iconName.value]
+          : 'undefined',
     )
 
-    const iconCode = Array.isArray(code.value) ? code.value[1] || code.value[0] : code.value
+    const iconCode = computed(() =>
+      Array.isArray(code.value) ? code.value[1] || code.value[0] : code.value,
+    )
 
     const scale = Array.isArray(code.value) && code.value.length > 1 ? code.value[0] : '64 64'
 
@@ -139,7 +152,7 @@ const CIcon = defineComponent({
             xmlns: 'http://www.w3.org/2000/svg',
             class: classNames,
             viewBox: viewBox,
-            innerHTML: `${titleCode}${iconCode}`,
+            innerHTML: `${titleCode}${iconCode.value}`,
             role: 'img',
           })
   },
