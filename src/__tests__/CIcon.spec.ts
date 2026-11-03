@@ -23,6 +23,19 @@ describe('CIcon', () => {
     expect(container.find('svg').classes('icon-custom-size')).toBe(true)
   })
 
+  it('renders no text in the svg without a title', () => {
+    const container = mount(CIcon, { props: { icon: ['64 64', '<path d="M0 0h64v64H0z"></path>'] } })
+    expect(container.find('svg').html()).not.toContain('undefined')
+    expect(container.find('svg title').exists()).toBe(false)
+  })
+
+  it('renders the title in the svg', () => {
+    const container = mount(CIcon, {
+      props: { icon: ['64 64', '<path d="M0 0h64v64H0z"></path>'], title: 'Flag' },
+    })
+    expect(container.find('svg title').text()).toBe('Flag')
+  })
+
   it('renders svg with className', () => {
     const container = mount(CIcon, { props: { class: 'icon-test' } })
     expect(container.find('svg').classes('icon-test')).toBe(true)

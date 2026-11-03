@@ -108,7 +108,7 @@ const CIcon = defineComponent({
         : '',
     )
 
-    const titleCode = props.title ? `<title>${props.title}</title>` : 'undefined'
+    const titleCode = props.title ? `<title>${props.title}</title>` : ''
 
     const code = computed(() =>
       Array.isArray(_icon.value)
